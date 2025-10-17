@@ -10,6 +10,10 @@ import concat from "gulp-concat"; //여러 파일을 하나로 합침
 import rename from "gulp-rename"; //파일 이름 변경 (예: style.css → style.min.css)
 import terser from "gulp-terser"; //JS 압축/최적화
 import imagemin from "gulp-imagemin"; //PNG, JPEG, GIF, SVG 이미지 용량 최적화
+import imageminGifsicle from "imagemin-gifsicle";
+import imageminMozjpeg from "imagemin-mozjpeg";
+import imageminOptipng from "imagemin-optipng";
+import imageminSvgo from "imagemin-svgo";
 import includer from "gulp-file-include"; //Gulp 빌드 시 정적 HTML 조립
 import prettier from "gulp-prettier"; //JS/CSS/HTML 코드 자동 포맷팅
 import { deleteAsync } from "del";
@@ -75,8 +79,10 @@ function fonts() {
 
 // Images
 function images() {
-  //return src(paths.img.src).pipe(imagemin()).pipe(dest(paths.img.dest));
-  return src(paths.img.src, { encoding: false }).pipe(dest(paths.img.dest));
+  return src(paths.img.src, { encoding: false })
+    .pipe(imagemin())
+    .pipe(dest(paths.img.dest));
+  // return src(paths.img.src, { encoding: false }).pipe(dest(paths.img.dest));
 }
 
 // SCSS → CSS
