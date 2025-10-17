@@ -1,0 +1,59 @@
+:root {
+  --min-height: 814px;
+  --page-tail-size: 6.4rem;
+
+  /* text */
+  --text-page-title: #b6d0c9;
+  --text-base: #131313;
+  --text-primary: #006aff;
+  --text-secondary: #00a6ff;
+  --text-accent: #eb5f00;
+  --text-nav-title: #fef8ca;
+  --text-accent-lnb: #ffc600;
+  --text-tip-title: #e4ddcf;
+  --text-tip-text: #534731;
+
+  /* 배경 */
+  //--bg-base: #f6f1e9;
+  --bg-base: #e4ddcf;
+  --bg-inner: #f6f1e9;
+  --bg-tip-title: #534731;
+  /* 배경 그라데이션 */
+  --bg-gra-nav: linear-gradient(
+    90deg,
+    #0f3025 0%,
+    #194335 38%,
+    #0b221b 87.51%,
+    #0d231c 100%
+  );
+  --bg-gra-tail: linear-gradient(180deg, #0f5a44 0%, #0f3227 86.31%);
+  --bg-gra-depth01: linear-gradient(
+      122deg,
+      rgba(27, 76, 61, 0.4) 7.61%,
+      rgba(18, 60, 47, 0) 16.66%
+    ),
+    linear-gradient(180deg, #123328 0%, rgba(18, 51, 40, 0) 100%);
+
+  /* border */
+  --border-gra-tail: linear-gradient(180deg, #209f79 0%, transparent 100%);
+  --border-gra-depth01: linear-gradient(179deg, #196d54 0%, transparent 8%);
+  --border-accent: #eb5f00;
+
+  /* stroke */
+  --text-stroke: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+
+  /* SHADOW */
+  --bg-shadow: drop-shadow(0 -8px 15px rgba(0, 0, 0, 0.05));
+  --text-shadow: drop-shadow(0 0 0.5px #000);
+  --btn-shadow: drop-shadow(0 2px 2px #000000aa)
+    drop-shadow(0 -1px 1px #000000aa);
+  --depth01-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.25);
+
+  /* mask content */
+  --mask-contents: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  /* gradient */
+  --gra-tail-bg: linear-gradient(180deg, #0f5a44 0%, #0f3227 86.31%);
+}
