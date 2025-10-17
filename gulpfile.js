@@ -44,7 +44,7 @@ const paths = {
   },
   jscopy: { src: "./markup/assets/js/lib/**/*", dest: "./dist/assets/js/lib" },
   img: {
-    src: "./markup/assets/images/**/*.{png,jpg,jpeg,svg,gif}",
+    src: "./markup/assets/images/**/*.{png,jpg,jpeg,svg}",
     dest: "./dist/assets/images",
   },
   fonts: { src: "./markup/assets/fonts/**/*", dest: "./dist/assets/fonts" },
@@ -75,9 +75,8 @@ function fonts() {
 
 // Images
 function images() {
-  return src(paths.img.src).pipe(imagemin()).pipe(dest(paths.img.dest));
-
-  // return src(paths.img.src).pipe(dest(paths.img.dest));
+  //return src(paths.img.src).pipe(imagemin()).pipe(dest(paths.img.dest));
+  return src(paths.img.src, { encoding: false }).pipe(dest(paths.img.dest));
 }
 
 // SCSS → CSS
