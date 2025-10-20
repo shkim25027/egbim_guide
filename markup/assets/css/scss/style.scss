@@ -456,33 +456,16 @@
 
 .command01 {
   .link {
-    &-systm {
-      @include responsive-width(139);
-      @include responsive-top(270.6);
-      @include responsive-right(40);
-    }
-
-    &-cmdall {
-      @include responsive-width(99);
-      @include responsive-top(424.91);
-      @include responsive-right(80);
-    }
-
     &-cven {
       @include responsive-width(88);
-      @include responsive-top(604.61);
-      @include responsive-right(61);
+      @include responsive-top(414.36, 840);
+      @include responsive-left(152);
     }
 
     &-struc {
       @include responsive-width(88);
-      @include responsive-top(682.3);
-      @include responsive-right(61);
-    }
-    &-shortcut {
-      @include responsive-width(88);
-      @include responsive-top(682.3);
-      @include responsive-right(61);
+      @include responsive-top(521.75, 840);
+      @include responsive-left(152);
     }
   }
 }
