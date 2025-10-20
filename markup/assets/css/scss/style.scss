@@ -304,14 +304,14 @@
   .link {
     &-prfall {
       @include responsive-width(177);
-      @include responsive-top(779.89);
-      @include responsive-left(93);
+      @include responsive-top(65, 840);
+      @include responsive-left(51);
     }
 
     &-cmdall {
       @include responsive-width(124);
-      @include responsive-top(779.89);
-      @include responsive-right(89.5);
+      @include responsive-top(65, 840);
+      @include responsive-right(664);
     }
   }
 }

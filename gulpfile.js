@@ -51,6 +51,11 @@ const paths = {
     src: "./markup/assets/images/**/*.{png,jpg,jpeg,svg}",
     dest: "./dist/assets/images",
   },
+  video: {
+    src: "./markup/assets/video/**/*.{mp4,webm,ogg}",
+    ignore: "!./markup/assets/video",
+    dest: "./dist/assets/video",
+  },
   fonts: { src: "./markup/assets/fonts/**/*", dest: "./dist/assets/fonts" },
   html: {
     src: "./markup/html/**/*.html",
@@ -116,6 +121,11 @@ function jscopy() {
   return src(paths.jscopy.src).pipe(dest(paths.jscopy.dest));
 }
 
+function videocopy() {
+  return src(paths.video.src) // 원본 경로
+    .pipe(dest(paths.video.dest)); // 복사할 경로
+}
+
 // HTML SSI
 function html() {
   return src([paths.html.src, ...paths.html.ignore]) // 배열로 합침
@@ -145,6 +155,7 @@ function serve() {
   watch(paths.js.src, scripts);
   watch(paths.jscopy.src, jscopy);
   watch(paths.img.src, images);
+  watch(paths.video.src, videocopy);
   watch(paths.fonts.src, fonts);
   watch(paths.html.src, html);
 }
@@ -154,13 +165,13 @@ function serve() {
 // ------------------------------------
 const build = series(
   clean,
-  parallel(fonts, images, scss, csscopy, scripts, jscopy, html),
+  parallel(fonts, images, scss, csscopy, scripts, jscopy, videocopy, html),
   cache
 );
 
 const dev = series(
   clean,
-  parallel(fonts, images, scss, csscopy, scripts, jscopy, html),
+  parallel(fonts, images, scss, csscopy, scripts, jscopy, videocopy, html),
   parallel(serve)
 );
 
